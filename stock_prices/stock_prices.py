@@ -31,13 +31,15 @@ def find_max_profit(prices):
   # Example input: [1050, 270, 1540, 3800, 2]
   #                  0     1     2     3   4
   # Track the best profit so far
-  max_profit_so_far = -20000
+  max_profit_so_far = -20000 # better way of doing this somewhere \\ negative infinity or first profit as the base
   for i in range(0, len(prices)):
+    # [1050, 270, 1540, 3800, 2]
     current_stock_price = prices[i]
     # print(f"Line 37: {current_stock_price}")
     for j in range(i + 1, len(prices)):
+      # 1050, 270, [1540, 3800, 2]
       # print(f"Line 39: {prices[j]}")
-      if -current_stock_price + prices[j] > max_profit_so_far:
+      if -current_stock_price + prices[j] > max_profit_so_far: 
         max_profit_so_far = -current_stock_price + prices[j]
         # print(f"Line 42: {max_profit_so_far}")
   
